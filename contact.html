@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — JVC International LLC</title>
+<meta name="description" content="Send an enquiry to JVC International LLC at ops@jvcpapers.com with your grade, tonnage and load port.">
+<meta property="og:title" content="Contact — JVC International LLC">
+<meta property="og:description" content="Send an enquiry to JVC International LLC at ops@jvcpapers.com with your grade, tonnage and load port.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jvcpapers.com/contact.html">
+<link rel="canonical" href="https://jvcpapers.com/contact.html">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<!-- Styles are the same on every page. If you change them here, copy the block to the other pages. -->
+<style>
+  :root{
+    --deep:#052B29;--ink:#0A4A46;--ink-soft:#0F625C;--cyan:#3FBFCF;--kraft:#B98A4E;
+    --paper:#F2F4F1;--card:#FFFFFF;--text:#16302C;--muted:#4E645F;--line:#D5DDD8;
+    --line-dark:rgba(255,255,255,.16);--wrap:1180px;
+    --sans:"Archivo","Helvetica Neue",Arial,sans-serif;
+    --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:150px}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+  body{margin:0;background:var(--paper);color:var(--text);font-family:var(--serif);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,h4,.sans{font-family:var(--sans)}
+  h1,h2,h3{margin:0;letter-spacing:-.02em;line-height:1.07;font-weight:700}
+  p{margin:0 0 1em}
+  a{color:inherit}
+  img{max-width:100%}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px}
+  :focus-visible{outline:3px solid var(--cyan);outline-offset:3px;border-radius:2px}
+  .skip{position:absolute;left:-9999px;top:0;background:#fff;color:var(--ink);padding:12px 18px;z-index:200}
+  .skip:focus{left:12px;top:12px}
+
+  /* ---------- buttons ---------- */
+  .btn{display:inline-block;font-family:var(--sans);font-weight:600;font-size:.88rem;text-decoration:none;
+       padding:13px 22px;border-radius:2px;border:1px solid var(--ink);background:var(--ink);color:#fff;cursor:pointer;transition:background .18s ease}
+  .btn:hover{background:var(--ink-soft)}
+  .btn.ghost{background:transparent;color:var(--ink)}
+  .btn.ghost:hover{background:rgba(10,74,70,.07)}
+  .btn.light{background:var(--cyan);border-color:var(--cyan);color:#04302F}
+  .btn.light:hover{background:#5FCFDC}
+  .btn.outline-light{background:transparent;border-color:rgba(255,255,255,.42);color:#fff}
+  .btn.outline-light:hover{background:rgba(255,255,255,.1)}
+
+  /* ---------- utility bar ---------- */
+  .util{background:var(--deep);color:#9EC4BF;font-family:var(--sans);font-size:.78rem}
+  .util .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;height:38px}
+  .util a{color:#DCEDEA;text-decoration:none;border-bottom:1px solid rgba(63,191,207,.5);padding-bottom:1px}
+  .util a:hover{color:#fff}
+  @media (max-width:620px){.util span{display:none}.util .wrap{justify-content:flex-end}}
+
+  /* ---------- header + nav ---------- */
+  .top{position:relative;position:sticky;top:0;z-index:100;background:rgba(242,244,241,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .top .wrap{display:flex;align-items:center;gap:30px;height:94px}
+  .brand{display:flex;align-items:center;margin-right:auto;text-decoration:none}
+  .brand img{height:66px;width:auto;display:block}
+  .menu{display:flex;gap:4px;align-items:center;list-style:none;margin:0;padding:0}
+  .menu > li{position:relative}
+  .menu > li > a,.menu > li > button{
+    display:flex;align-items:center;gap:7px;font-family:var(--sans);font-size:.88rem;font-weight:500;
+    color:var(--muted);text-decoration:none;background:none;border:0;cursor:pointer;
+    padding:10px 14px;border-bottom:2px solid transparent;line-height:1.4
+  }
+  .menu > li > a:hover,.menu > li > button:hover,.menu > li.open > button{color:var(--ink);border-bottom-color:var(--cyan)}
+  .menu > li > a.here{color:var(--ink);border-bottom-color:var(--ink)}
+  .caret{width:9px;height:9px;flex:none;transition:transform .18s ease}
+  .menu > li.open .caret{transform:rotate(180deg)}
+  .sub{
+    position:absolute;left:0;top:100%;min-width:264px;background:#fff;border:1px solid var(--line);
+    border-top:3px solid var(--cyan);border-radius:0 0 3px 3px;box-shadow:0 18px 40px rgba(5,43,41,.16);
+    list-style:none;margin:0;padding:10px 0;display:none;z-index:120
+  }
+  .menu > li.open .sub{display:block}
+  .sub a{display:block;padding:11px 22px;text-decoration:none;font-family:var(--sans);font-size:.87rem;color:var(--text)}
+  .sub a small{display:block;font-size:.76rem;color:var(--muted);margin-top:3px;font-weight:400}
+  .sub a:hover{background:var(--paper);color:var(--ink)}
+  .navcta{margin-left:10px}
+  .burger{display:none;width:46px;height:42px;border:1px solid var(--line);background:#fff;border-radius:2px;cursor:pointer;padding:0}
+  .burger span{display:block;width:20px;height:2px;background:var(--ink);margin:4px auto}
+
+  @media (max-width:1040px){
+    .top .wrap{height:78px;gap:14px}
+    .brand img{height:54px}
+    .burger{display:block}
+    .navcta{display:none}
+    .nav{position:absolute;top:100%;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);
+         box-shadow:0 20px 40px rgba(5,43,41,.14);max-height:calc(100vh - 118px);overflow:auto;display:none}
+    .nav.show{display:block}
+    .menu{flex-direction:column;align-items:stretch;gap:0;padding:8px 0}
+    .menu > li{border-bottom:1px solid var(--line)}
+    .menu > li:last-child{border-bottom:0}
+    .menu > li > a,.menu > li > button{width:100%;justify-content:space-between;padding:16px 28px;font-size:1rem;border-bottom:0}
+    .sub{position:static;display:none;border:0;border-top:1px solid var(--line);box-shadow:none;padding:4px 0 12px;background:var(--paper)}
+    .menu > li.open .sub{display:block}
+    .sub a{padding:11px 40px}
+    .mobcta{padding:18px 28px 24px}
+    .mobcta .btn{display:block;text-align:center}
+  }
+  @media (min-width:1041px){.mobcta{display:none}}
+
+  /* ---------- hero (home) ---------- */
+  .hero{position:relative;background:var(--deep);color:#EAF2F0;overflow:hidden}
+  .flutes{position:absolute;inset:auto 0 0 0;height:132px;opacity:.07;pointer-events:none}
+  .hero .wrap{position:relative;display:grid;grid-template-columns:1.12fr .88fr;gap:60px;padding-top:84px;padding-bottom:88px;align-items:start}
+  .hero h1{font-size:clamp(2.35rem,4.8vw,3.9rem);color:#fff;max-width:15ch}
+  .hero .lede{font-size:1.2rem;line-height:1.6;color:#BFD6D2;max-width:52ch;margin-top:24px}
+  .hero .cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
+  .leafrule{width:64px;height:4px;background:var(--cyan);border-radius:2px;margin-bottom:28px}
+  .docket{background:#fff;color:var(--text);border-radius:3px;box-shadow:0 24px 60px rgba(0,0,0,.28)}
+  .docket header{background:var(--ink);color:#fff;padding:18px 24px;display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-radius:3px 3px 0 0}
+  .docket header b{font-family:var(--sans);font-size:.95rem;font-weight:600}
+  .docket header em{font-family:var(--sans);font-style:normal;font-size:.75rem;color:#8FD3DC}
+  .docket dl{margin:0;padding:6px 24px 22px}
+  .docket dt{font-family:var(--sans);font-size:.72rem;font-weight:600;color:var(--muted);letter-spacing:.04em;padding-top:16px}
+  .docket dd{margin:2px 0 0;padding-bottom:14px;border-bottom:1px solid var(--line);font-size:1.02rem;line-height:1.45}
+  .docket dd:last-of-type{border-bottom:0;padding-bottom:4px}
+  .docket .stack{display:block;color:var(--muted);font-size:.95rem}
+  @media (max-width:940px){.hero .wrap{grid-template-columns:1fr;gap:44px;padding-top:56px;padding-bottom:68px}.hero h1{max-width:none}}
+
+  /* ---------- page banner (inner pages) ---------- */
+  .banner{background:var(--deep);color:#BFD6D2;position:relative;overflow:hidden}
+  .banner .wrap{position:relative;padding:74px 28px 78px;max-width:var(--wrap)}
+  .banner h1{color:#fff;font-size:clamp(2.1rem,4.2vw,3.2rem);max-width:18ch}
+  .banner p{font-size:1.14rem;max-width:56ch;margin-top:20px;color:#BFD6D2}
+  .crumb{font-family:var(--sans);font-size:.78rem;color:#8FB3AE;margin-bottom:20px}
+  .crumb a{text-decoration:none;border-bottom:1px solid rgba(63,191,207,.5)}
+  .crumb a:hover{color:#fff}
+
+  /* ---------- strip ---------- */
+  .strip{background:var(--ink);color:#DCEDEA}
+  .strip .wrap{display:grid;grid-template-columns:repeat(3,1fr)}
+  .strip div{padding:26px 0}
+  .strip div+div{padding-left:34px;border-left:1px solid rgba(255,255,255,.18)}
+  .strip b{display:block;font-family:var(--sans);font-size:1.45rem;font-weight:700;color:#fff;line-height:1.15}
+  .strip span{font-size:.97rem;color:#A9CBC6}
+  @media (max-width:760px){.strip .wrap{grid-template-columns:1fr}.strip div+div{padding-left:0;border-left:0;border-top:1px solid rgba(255,255,255,.18)}}
+
+  /* ---------- sections ---------- */
+  section{padding:92px 0}
+  section.tight{padding:64px 0}
+  .white{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .sec-head{max-width:64ch;margin-bottom:50px}
+  .sec-head h2{font-size:clamp(1.85rem,3.3vw,2.5rem)}
+  .sec-head p{font-size:1.1rem;color:var(--muted);margin-top:18px;max-width:58ch}
+  @media (max-width:760px){section{padding:62px 0}.sec-head{margin-bottom:36px}}
+
+  .roles{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+  .role{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--ink);border-radius:3px;padding:34px 32px}
+  .role.sell{border-top-color:var(--cyan)}
+  .role h3{font-size:1.35rem;margin-bottom:14px}
+  .role p{color:var(--muted);margin-bottom:18px}
+  .role ul{margin:0;padding-left:1.1em}
+  .role li{margin-bottom:8px}
+  @media (max-width:820px){.roles{grid-template-columns:1fr}}
+
+  /* product cards */
+  .pcards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .pcard{display:block;text-decoration:none;background:#fff;border:1px solid var(--line);border-radius:3px;padding:30px 28px;transition:border-color .18s ease}
+  .pcard:hover{border-color:var(--ink)}
+  .pcard b{display:block;font-family:var(--sans);font-size:1.2rem;font-weight:700;color:var(--ink)}
+  .pcard small{display:block;font-family:var(--sans);font-size:.8rem;color:var(--muted);margin-top:5px}
+  .pcard p{margin:16px 0 0;color:var(--muted);font-size:1rem}
+  @media (max-width:860px){.pcards{grid-template-columns:1fr}}
+
+  /* grade detail blocks */
+  .grade{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;padding:52px 0;border-top:1px solid var(--line)}
+  .grade:first-of-type{border-top:0;padding-top:0}
+  .grade h2{font-size:1.9rem;color:var(--ink)}
+  .grade .tag{font-family:var(--sans);font-size:.82rem;color:var(--muted);margin-top:8px}
+  .grade .body p{color:var(--muted)}
+  .qual{list-style:none;margin:0;padding:0}
+  .qual li{position:relative;padding-left:20px;margin-bottom:9px}
+  .qual li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;background:var(--kraft);border-radius:1px}
+  .qhead{font-family:var(--sans);font-size:.78rem;font-weight:600;color:var(--muted);letter-spacing:.04em;margin:26px 0 12px}
+  @media (max-width:860px){.grade{grid-template-columns:1fr;gap:24px;padding:40px 0}}
+
+  .note{margin-top:34px;padding:20px 24px;background:var(--paper);border-left:3px solid var(--kraft);color:var(--muted);font-size:.98rem}
+  .white .note{background:var(--paper)}
+  .note p:last-child{margin-bottom:0}
+
+  /* steps */
+  .steps{counter-reset:step;display:grid;grid-template-columns:repeat(5,1fr)}
+  .step{counter-increment:step;padding:0 26px 0 0;position:relative}
+  .step::before{content:counter(step);display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;
+    background:var(--ink);color:#fff;font-family:var(--sans);font-weight:600;font-size:.95rem;margin-bottom:18px}
+  .step::after{content:"";position:absolute;left:38px;top:19px;right:0;height:1px;background:var(--line)}
+  .step:last-child::after{display:none}
+  .step h3{font-size:1.05rem;margin-bottom:8px}
+  .step p{font-size:.98rem;color:var(--muted);margin:0}
+  @media (max-width:900px){
+    .steps{grid-template-columns:1fr;gap:26px}
+    .step{padding:0 0 0 58px}
+    .step::before{position:absolute;left:0;top:0;margin:0}
+    .step::after{left:19px;top:44px;right:auto;bottom:-26px;width:1px;height:auto}
+  }
+
+  /* dark split */
+  .dark{background:var(--deep);color:#BFD6D2}
+  .dark h2{color:#fff;font-size:clamp(1.85rem,3.3vw,2.5rem);margin-bottom:24px}
+  .dark p{color:#BFD6D2;font-size:1.08rem;line-height:1.72}
+  .split{display:grid;grid-template-columns:1.2fr .8fr;gap:70px;align-items:start}
+  .pull{font-family:var(--sans);font-weight:600;font-size:1.25rem;line-height:1.44;color:#fff;border-left:3px solid var(--cyan);padding-left:22px;margin:0}
+  .facts{list-style:none;margin:0;padding:0}
+  .facts li{padding:16px 0;border-top:1px solid var(--line-dark)}
+  .facts b{display:block;font-family:var(--sans);font-size:.95rem;font-weight:600;color:#fff;margin-bottom:2px}
+  .facts a{color:#fff;text-decoration-color:var(--cyan);text-underline-offset:3px}
+  @media (max-width:860px){.split{grid-template-columns:1fr;gap:38px}}
+
+  /* market lists */
+  .cols2{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+  @media (max-width:860px){.cols2{grid-template-columns:1fr;gap:36px}}
+  .plainlist{list-style:none;margin:0;padding:0}
+  .plainlist li{padding:18px 0;border-top:1px solid var(--line)}
+  .plainlist b{display:block;font-family:var(--sans);font-size:1rem;color:var(--ink);margin-bottom:3px}
+  .plainlist span{color:var(--muted);font-size:1rem}
+
+  /* cta band */
+  .band{background:var(--ink);color:#DCEDEA;padding:64px 0}
+  .band .wrap{display:flex;justify-content:space-between;align-items:center;gap:34px;flex-wrap:wrap}
+  .band h2{color:#fff;font-size:clamp(1.6rem,2.8vw,2.15rem);margin-bottom:10px}
+  .band p{margin:0;color:#A9CBC6;max-width:52ch}
+
+  /* contact */
+  form{display:grid;gap:18px}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  label{display:block;font-family:var(--sans);font-size:.8rem;font-weight:600;color:var(--muted);margin-bottom:6px}
+  input,select,textarea{width:100%;font-family:var(--serif);font-size:1rem;color:var(--text);padding:12px 14px;border:1px solid var(--line);border-radius:2px;background:#fff}
+  select{font-family:var(--sans);font-size:.95rem}
+  textarea{min-height:130px;resize:vertical}
+  input:hover,select:hover,textarea:hover{border-color:var(--ink-soft)}
+  .hint{font-size:.9rem;color:var(--muted);margin:0}
+  .contact-card{background:#fff;border:1px solid var(--line);border-radius:3px;padding:34px 32px}
+  .contact-card h3{font-size:1.25rem;margin-bottom:8px}
+  .contact-card dt{font-family:var(--sans);font-size:.76rem;font-weight:600;color:var(--muted);letter-spacing:.04em;margin-top:20px}
+  .contact-card dd{margin:4px 0 0;font-size:1.05rem}
+  .contact-card dl{margin:0}
+  .contact-card a{color:var(--ink);text-decoration-color:var(--cyan);text-underline-offset:3px}
+  @media (max-width:860px){.row{grid-template-columns:1fr}}
+
+  /* footer */
+  footer{background:var(--ink);color:#BFD6D2;padding:58px 0 42px;font-size:.95rem}
+  .fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:44px;padding-bottom:34px;border-bottom:1px solid var(--line-dark)}
+  .fgrid b{display:block;font-family:var(--sans);font-size:1.02rem;color:#fff;margin-bottom:10px}
+  .fgrid a{color:#DCEDEA;text-decoration-color:var(--cyan);text-underline-offset:3px}
+  .fnav{list-style:none;margin:0;padding:0}
+  .fnav li{margin-bottom:9px}
+  .fnav a{text-decoration:none;color:#BFD6D2}
+  .fnav a:hover{color:#fff;text-decoration:underline;text-decoration-color:var(--cyan)}
+  .fbot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:24px;font-size:.85rem;color:#8FB3AE}
+  @media (max-width:820px){.fgrid{grid-template-columns:1fr;gap:30px}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="util">
+  <div class="wrap">
+    <span>Buying and selling recovered paper for the mills of South India</span>
+    <div><a href="mailto:ops@jvcpapers.com">ops@jvcpapers.com</a></div>
+  </div>
+</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="JVC International LLC — home">
+      <img src="data:image/png;base64,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" alt="JVC International LLC" width="240" height="288">
+    </a>
+
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="nav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <div class="nav" id="nav">
+      <ul class="menu">
+        <li class="has-sub">
+          <button type="button" aria-expanded="false">About us <svg class="caret" viewBox="0 0 12 8" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1.5 6 6.5 11 1.5"/></svg></button>
+          <ul class="sub">
+            <li><a href="about.html#story">Our story<small>Where the company came from</small></a></li>
+            <li><a href="about.html#experience">Our experience<small>Forty years inside kraft mills</small></a></li>
+            <li><a href="about.html#how-we-work">How we work<small>Enquiry through to settlement</small></a></li>
+          </ul>
+        </li>
+        <li class="has-sub">
+          <button type="button" aria-expanded="false">Products <svg class="caret" viewBox="0 0 12 8" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1.5 6 6.5 11 1.5"/></svg></button>
+          <ul class="sub">
+            <li><a href="products.html#dsocc-12">DSOCC #12<small>Double sorted old corrugated containers</small></a></li>
+            <li><a href="products.html#grade-11">Grade #11<small>Double-lined kraft corrugated cuttings</small></a></li>
+            <li><a href="products.html#other-occ">Other OCC grades<small>Priced on enquiry</small></a></li>
+          </ul>
+        </li>
+        <li><a href="markets.html">Markets</a></li>
+        <li><a href="contact.html" class="here">Contact</a></li>
+      </ul>
+      <div class="mobcta"><a class="btn" href="contact.html">Send an enquiry</a></div>
+    </div>
+
+    <a class="btn navcta" href="contact.html">Send an enquiry</a>
+  </div>
+</header>
+
+<div class="banner">
+    <svg class="flutes" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 1200 132">
+      <defs><pattern id="flute" width="26" height="132" patternUnits="userSpaceOnUse">
+        <path d="M0 132 V48 Q13 0 26 48 V132" fill="none" stroke="#8FD3DC" stroke-width="2"/>
+      </pattern></defs>
+      <rect width="1200" height="132" fill="url(#flute)"/>
+    </svg>
+  <div class="wrap">
+    <div class="crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Contact</div>
+    <h1>Send an enquiry</h1>
+    <p>Tell us the grade and the volume you can move regularly, whether you are selling material or buying it. We reply to every enquiry that comes with a specification.</p>
+  </div>
+</div>
+
+<main id="main">
+  <section>
+    <div class="wrap cols2">
+      <div>
+        <form id="enquiry">
+          <div class="row">
+            <div><label for="name">Your name</label><input id="name" name="name" type="text" autocomplete="name" required></div>
+            <div><label for="company">Company</label><input id="company" name="company" type="text" autocomplete="organization" required></div>
+          </div>
+          <div class="row">
+            <div><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+            <div><label for="country">Country or load port</label><input id="country" name="country" type="text"></div>
+          </div>
+          <div class="row">
+            <div>
+              <label for="side">You are</label>
+              <select id="side" name="side">
+                <option>Selling material to us</option>
+                <option>Buying material from us</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+            <div>
+              <label for="grade">Grade</label>
+              <select id="grade" name="grade">
+                <option>DSOCC #12</option>
+                <option>Grade #11 DLK</option>
+                <option>Other OCC</option>
+              </select>
+            </div>
+          </div>
+          <div><label for="volume">Monthly volume</label><input id="volume" name="volume" type="text" placeholder="e.g. 500 MT"></div>
+          <div><label for="message">Details</label><textarea id="message" name="message" placeholder="Specification, shipment period, price idea, anything else we should know."></textarea></div>
+          <div><button class="btn" type="submit">Send enquiry</button></div>
+          <p class="hint" id="formhint">This opens your email app with the details filled in, addressed to ops@jvcpapers.com.</p>
+        </form>
+      </div>
+
+      <aside class="contact-card">
+        <h3>Direct contact</h3>
+        <dl>
+          <dt>Email</dt>
+          <dd><a href="mailto:ops@jvcpapers.com">ops@jvcpapers.com</a></dd>
+          <dt>Company</dt>
+          <dd>JVC International LLC</dd>
+          <!-- EDIT: add phone / WhatsApp and office address when ready
+          <dt>Phone</dt>
+          <dd><a href="tel:+910000000000">+91 00000 00000</a></dd>
+          <dt>Office</dt>
+          <dd>Street, City, State</dd>
+          -->
+          <dt>Best first message</dt>
+          <dd style="font-size:1rem;color:var(--muted)">Grade, monthly tonnage, load port and your terms. That is enough for us to come back with something concrete.</dd>
+          <dt>Our reply</dt>
+          <dd style="font-size:1rem;color:var(--muted)">Comes from ops@jvcpapers.com. On a first exchange, check your spam folder if you do not see it.</dd>
+        </dl>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<script>
+  document.getElementById('enquiry').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var f = e.target;
+    var v = function (id) { return (f.querySelector('#' + id).value || '').trim(); };
+    var subject = 'Enquiry: ' + v('grade') + (v('company') ? ' \u2014 ' + v('company') : '');
+    var body = [
+      'Name: ' + v('name'),
+      'Company: ' + v('company'),
+      'Email: ' + v('email'),
+      'Country / load port: ' + v('country'),
+      'Buying or selling: ' + v('side'),
+      'Grade: ' + v('grade'),
+      'Monthly volume: ' + v('volume'),
+      '',
+      'Details:',
+      v('message')
+    ].join('\n');
+    window.location.href = 'mailto:ops@jvcpapers.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    document.getElementById('formhint').textContent =
+      'Your email app should be opening now. If nothing happens, write to ops@jvcpapers.com directly.';
+  });
+</script>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <b>JVC International LLC</b>
+        We buy recovered paper from suppliers abroad and sell it to kraft and duplex mills across South India.<br><br>
+        <a href="mailto:ops@jvcpapers.com">ops@jvcpapers.com</a>
+        <!-- EDIT: add phone and office address here when ready -->
+      </div>
+      <div>
+        <b>Pages</b>
+        <ul class="fnav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="markets.html">Markets</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <b>Products</b>
+        <ul class="fnav">
+          <li><a href="products.html#dsocc-12">DSOCC #12</a></li>
+          <li><a href="products.html#grade-11">Grade #11 DLK</a></li>
+          <li><a href="products.html#other-occ">Other OCC grades</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fbot">
+      <div>&copy; <span id="yr">2026</span> JVC International LLC</div>
+      <div>Prices and specifications are agreed contract by contract.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var y = document.getElementById('yr'); if (y) y.textContent = new Date().getFullYear();
+
+  // dropdown menus
+  var groups = Array.prototype.slice.call(document.querySelectorAll('.has-sub'));
+  var hoverNav = window.matchMedia('(min-width:1041px) and (hover:hover)');
+
+  function open(g)   { g.classList.add('open'); g.querySelector('button').setAttribute('aria-expanded', 'true'); }
+  function close(g)  { g.classList.remove('open'); g.querySelector('button').setAttribute('aria-expanded', 'false'); }
+  function closeAll(){ groups.forEach(close); }
+
+  groups.forEach(function (g) {
+    var btn = g.querySelector('button');
+
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      // on hover-capable desktop the menu is already open, so a click should keep it open
+      if (hoverNav.matches) { closeAll(); open(g); return; }
+      var wasOpen = g.classList.contains('open');
+      closeAll();
+      if (!wasOpen) open(g);
+    });
+
+    // keyboard: opens on focus, closes when focus leaves the group
+    g.addEventListener('focusin', function () { if (hoverNav.matches) { closeAll(); open(g); } });
+    g.addEventListener('focusout', function (e) {
+      if (hoverNav.matches && !g.contains(e.relatedTarget)) close(g);
+    });
+
+    g.addEventListener('mouseenter', function () { if (hoverNav.matches) open(g); });
+    g.addEventListener('mouseleave', function () { if (hoverNav.matches && !g.contains(document.activeElement)) close(g); });
+  });
+
+  document.addEventListener('click', closeAll);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeAll(); });
+
+  // mobile menu
+  var burger = document.getElementById('burger'), nav = document.getElementById('nav');
+  burger.addEventListener('click', function () {
+    var open = nav.classList.toggle('show');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+</script>
+</body>
+</html>
